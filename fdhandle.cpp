@@ -56,6 +56,7 @@ int main(int argc, char *argv[])
     std::cerr<<argc<<std::endl;
     std::cerr<<argv[1]<<std::endl;
     FdHandle fd("./test", O_CREAT | O_RDWR | O_TRUNC);
-    FdHandle fd2(fd);
+    //FdHandle fd2(fd); Define copy ctor else this is a compilation error
+    // FdHandle fd3 = fd; Define copy assignment operator overload else compilation error
     return 0;
 }
